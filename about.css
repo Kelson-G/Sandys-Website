@@ -1,0 +1,187 @@
+:root {
+  --primary-color: #00195f; /* Midnight Blue */
+  --secondary-color: #EEF0F2; /* Porcelain */
+  --accent-color: #ffe033; /* Bright Sun */
+  --text-color: #000000; /* Black */
+  --tertiary-color: #1b01e2; /* Dark Blue */
+  --font-family: Arial, sans-serif;
+  --font-size: 16px;
+  --padding: 10px;
+  --gap: 30px;
+}
+
+
+/* Vision section hero background */
+#vision {
+  position: relative;
+  background-image: url('images/world.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  min-height: 70vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start; /* keep content left */
+  padding: 100px 15% 60px; /* top padding clears fixed header */
+  color: #ffffff;
+  overflow: hidden;
+  margin-bottom: 48px; /* add space before Mission section */
+}
+
+#vision::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35); /* dark overlay for readability */
+  z-index: 0;
+}
+
+#vision > * {
+  position: relative;
+  z-index: 1; /* place text above overlay */
+  max-width: 900px; /* keep text to a readable width on left */
+}
+
+/* Mission layout: image below first paragraph, bullets to the right */
+#mission {
+  margin-bottom: 60px; /* add whitespace before Company section */
+}
+
+#mission .section-title {
+  text-align: center;
+  max-width: 1000px; /* match main page content width */
+  margin: 0 auto 1rem; /* center container, right-align text */
+  padding: 0 15px 0.5rem; /* small side padding, bottom padding for border */
+  letter-spacing: 0.01em; /* subtle spacing for readability */
+  border-bottom: 3px solid var(--tertiary-color); /* line under header like section 2 */
+}
+
+.mission-intro {
+  max-width: 1000px; /* match main page content width */
+  margin: 0 auto;
+  padding: 0 15px; /* small side padding */
+}
+
+.mission-intro p {
+  text-align: center; /* center-align the intro paragraph */
+  line-height: 1.7; /* more white space in lines */
+  letter-spacing: 0.02em; /* subtle character spacing */
+  word-spacing: 0.03em; /* slightly reduced word spacing */
+  margin: 0.5rem 0 1.25rem; /* breathing room below paragraph */
+}
+
+.mission-row {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  padding: 0 15px; /* constrain to page gutter */
+  max-width: 1000px; /* do not exceed desired width */
+  margin: 0 auto; /* center the row container */
+}
+
+.mission-image {
+  flex: 1;
+  max-width: 520px; /* increase image size */
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+  object-fit: cover;
+}
+
+.mission-bullets {
+  flex: 2;
+  min-width: 0; /* allow flex item to shrink and wrap */
+}
+
+.mission-bullets p {
+  margin-top: 0;
+}
+
+/* Apply same word/line spacing to bullet points */
+.mission-bullets li {
+  line-height: 1.7;
+  word-spacing: 0.03em;
+  overflow-wrap: break-word; /* wrap long words/URLs */
+  hyphens: auto; /* hyphenate long words where possible */
+}
+
+@media (max-width: 1024px) {
+  .mission-row {
+    flex-direction: column; /* stack bullets under image on narrower screens */
+    align-items: center; /* center the image and bullets */
+  }
+  
+  .mission-image {
+    align-self: center; /* center the image */
+  }
+}
+
+@media (max-width: 768px) {
+  .mission-row {
+    flex-direction: column; /* stack image then bullets on mobile */
+    align-items: center; /* center the image and bullets */
+  }
+
+  #mission .section-title {
+    margin: 0 10% 1rem;
+  }
+
+  .mission-image {
+    max-width: 100%;
+    align-self: center; /* center the image */
+  }
+}
+
+#vision h1 {
+  margin-bottom: 1rem;
+}
+
+#vision p {
+  line-height: 1.6;
+  margin: 0.5rem 0;
+}
+
+/* Company section header banner */
+#company {
+  padding: 0;
+  margin-bottom: 60px; /* add whitespace before footer */
+}
+
+#company h1 {
+  position: relative;
+  background-image: url('images/matrix.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  color: var(--accent-color); /* bright sun color */
+  text-align: center;
+  max-width: 100%;
+  margin: 0 0 40px 0; /* add spacing below header */
+  padding: 80px 15% 40px;
+  text-shadow: 0 2px 8px rgb(0, 0, 0, 1); /* add shadow for contrast */  -webkit-text-stroke: 1px rgba(0, 0, 0, 0.1); /* outline for text */}
+
+#company h1::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0);
+  z-index: 0;
+}
+
+#company h1 {
+  position: relative;
+  z-index: 1; /* place text above overlay */
+}
+
+#company p {
+  max-width: 1000px;
+  margin: 0 auto 1.5rem;
+  line-height: 1.7;
+  letter-spacing: 0.01em;
+  word-spacing: 0.03em;
+  padding: 0 15px;
+  text-align: justify;
+  color: #000000;
+  background-color: var(--secondary-color); /* porcelain background */
+}

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MindForge Applied Research | Contact Us</title>
+    <meta name="description" content="A woman-owned, mission-driven, warfighter-focused engineering and technical advisory firm specializing in advanced modeling and simulation, systems engineering, and software-intensive system architectures for complex defense systems.">
+    <meta name="keywords" content="MindForge, Applied Research, AI, Machine Learning, Modeling, Simulation, Systems Engineering, Software Architecture, Defense Systems">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Kelson Gneiting">
+
+    <meta property="og:title" content="MindForge Applied Research">
+    <meta property="og:description" content="A woman-owned, mission-driven, warfighter-focused engineering and technical advisory firm specializing in advanced modeling and simulation, systems engineering, and software-intensive system architectures for complex defense systems.">
+    <meta property="og:image" content="images/soldier-interface.jpg">
+    <meta property="og:url" content="https://www.mindforge-ar.com">
+    <meta property="og:type" content="website">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="MindForge Applied Research">
+    <meta name="twitter:description" content="A woman-owned, mission-driven, warfighter-focused engineering and technical advisory firm specializing in advanced modeling and simulation, systems engineering, and software-intensive system architectures for complex defense systems.">
+    <meta name="twitter:image" content="images/soldier-interface.jpg">
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="contact_us.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="main.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="exceutive_bio.html">Executive Bio</a></li>
+                <li><a href="contact_us.html">Contact Us</a></li>
+            </ul>
+        </nav>
+        <div class="logo">
+            <img src="images/logo.png" alt="MindForge Logo">
+        </div>
+    </header>
+
+    <main>
+        <section id="contact-section">
+            <div class="contact-container">
+                <h1>CONTACT US</h1>
+                <form id="contact-form" class="contact-form" method="POST" action="contact_handler.php">
+                    <div class="form-group">
+                        <label for="name">Name *</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Phone</label>
+                        <input type="tel" id="phone" name="phone">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="company">Company/Organization</label>
+                        <input type="text" id="company" name="company">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="subject">Subject *</label>
+                        <input type="text" id="subject" name="subject" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Message *</label>
+                        <textarea id="message" name="message" rows="6" required></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
+                <div id="form-response" class="form-response"></div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <img src="images/Heading-cropped.png" alt="Heading" class="footer-image">
+            <p>MindForge Applied Research, LLC works with DoD program offices, SETA organizations, FFRDCs, national labs, and defense industry and allied partners.</p>
+            <div class="footer-contacts">
+                <p>📧 info@mindforge-ar.com</p>
+                <p>📧 contracts@mindforge-ar.com</p>
+                <p>📍 Boise, ID</p>
+            </div>
+            <p>MindForge Applied Research, LLC © 2025 All Rights Reserved.</p>
+        </div>
+    </footer>
+    </body>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var header = document.querySelector('header');
+            function updateHeader() {
+                if (window.scrollY > 60) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+            }
+            updateHeader();
+            window.addEventListener('scroll', updateHeader);
+
+            // Form submission handler
+            const contactForm = document.getElementById('contact-form');
+            const formResponse = document.getElementById('form-response');
+
+            contactForm.addEventListener('submit', async function(e) {
+                e.preventDefault();
+                
+                const formData = new FormData(contactForm);
+                
+                try {
+                    const response = await fetch('contact_handler.php', {
+                        method: 'POST',
+                        body: formData
+                    });
+
+                    const result = await response.json();
+
+                    formResponse.classList.remove('success', 'error');
+
+                    if (response.ok) {
+                        formResponse.textContent = result.success || 'Message sent successfully!';
+                        formResponse.classList.add('success');
+                        contactForm.reset();
+                    } else {
+                        formResponse.textContent = result.error || 'An error occurred. Please try again.';
+                        formResponse.classList.add('error');
+                    }
+                } catch (error) {
+                    formResponse.textContent = 'An error occurred. Please try again later.';
+                    formResponse.classList.add('error');
+                    console.error('Error:', error);
+                }
+            });
+        });
+    </script>
+</html>

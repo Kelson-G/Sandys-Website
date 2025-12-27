@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MindForge Applied Research | Executive Bio</title>
+    <meta name="description" content="A woman-owned, mission-driven, warfighter-focused engineering and technical advisory firm specializing in advanced modeling and simulation, systems engineering, and software-intensive system architectures for complex defense systems.">
+    <meta name="keywords" content="MindForge, Applied Research, AI, Machine Learning, Modeling, Simulation, Systems Engineering, Software Architecture, Defense Systems">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Kelson Gneiting">
+
+    <meta property="og:title" content="MindForge Applied Research">
+    <meta property="og:description" content="A woman-owned, mission-driven, warfighter-focused engineering and technical advisory firm specializing in advanced modeling and simulation, systems engineering, and software-intensive system architectures for complex defense systems.">
+    <meta property="og:image" content="images/soldier-interface.jpg">
+    <meta property="og:url" content="https://www.mindforge-ar.com">
+    <meta property="og:type" content="website">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="MindForge Applied Research">
+    <meta name="twitter:description" content="A woman-owned, mission-driven, warfighter-focused engineering and technical advisory firm specializing in advanced modeling and simulation, systems engineering, and software-intensive system architectures for complex defense systems.">
+    <meta name="twitter:image" content="images/soldier-interface.jpg">
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="exceutive_bio.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="main.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="exceutive_bio.html">Executive Bio</a></li>
+                <li><a href="contact_us.html">Contact Us</a></li>
+            </ul>
+        </nav>
+        <div class="logo">
+            <img src="images/logo.png" alt="MindForge Logo">
+        </div>
+    </header>
+
+    <main>
+        <section id="executive-bio">
+            <div class="bio-container">
+                <div class="bio-content">
+                    <h1>EXECUTIVE BIO — SANDY VEAUTOUR</h1>
+                    <p><strong>Long-Form Bio</strong></p>
+                    <p>Sandy Veautour, Founder and CEO of MindForge Applied Research, LLC, brings more than three decades of experience 
+                        as a national recognition expert advancing modeling & simulation, systems engineering, and digital modernization 
+                        initiatives. She has served in senior technical leadership roles supporting the U.S. Army, Missile Defense Agency (MDA)
+                        , the U.S. Space Force, and the Combatant Commands, guiding the development of large-scale digital environments, complex 
+                        M&S architectures, and mission-critical technical solutions.</p>
+                    <p>Her experience additionally spans the MDA Digital Test Enterprise, enterprise M&S frameworks, HWIL capabilities, 
+                        multi-node simulation architectures, and digital test modernization efforts for National defense advancements. 
+                        She is recognized for unifying stakeholders, simplifying technical complexity, and ensuring engineering outcomes 
+                        remain tightly aligned to warfighter needs. She provides senior technical expertise, strategic insight, and 
+                        mission-focused engineering solutions for complex defense programs.</p>
+                    <p>Sandy founded MindForge Applied Research to provide the nation, our allies, and our partners with elite-level 
+                        engineering support, strong technical leadership, and mission-aligned architectural expertise that drives clarity 
+                        and accelerates capability development.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <img src="images/Heading-cropped.png" alt="Heading" class="footer-image">
+            <p>MindForge Applied Research, LLC works with DoD program offices, SETA organizations, FFRDCs, national labs, and defense industry and allied partners.</p>
+            <div class="footer-contacts">
+                <p>📧 info@mindforge-ar.com</p>
+                <p>📧 contracts@mindforge-ar.com</p>
+                <p>📍 Boise, ID</p>
+            </div>
+            <p>MindForge Applied Research, LLC © 2025 All Rights Reserved.</p>
+        </div>
+    </footer>
+    </body>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var header = document.querySelector('header');
+            function updateHeader() {
+                if (window.scrollY > 60) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+            }
+            updateHeader();
+            window.addEventListener('scroll', updateHeader);
+        });
+    </script>
+</html>

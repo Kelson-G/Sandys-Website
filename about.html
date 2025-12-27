@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MindForge Applied Research | About</title>
+    <meta name="description" content="A woman-owned, mission-driven, warfighter-focused engineering and technical advisory firm specializing in advanced modeling and simulation, systems engineering, and software-intensive system architectures for complex defense systems.">
+    <meta name="keywords" content="MindForge, Applied Research, AI, Machine Learning, Modeling, Simulation, Systems Engineering, Software Architecture, Defense Systems">
+    <meta name="author" content="Kelson Gneiting">
+
+    <meta property="og:title" content="MindForge Applied Research">
+    <meta property="og:description" content="A woman-owned, mission-driven, warfighter-focused engineering and technical advisory firm specializing in advanced modeling and simulation, systems engineering, and software-intensive system architectures for complex defense systems.">
+    <meta property="og:image" content="images/soldier-interface.jpg">
+    <meta property="og:url" content="https://www.mindforge-ar.com">
+    <meta property="og:type" content="website">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="MindForge Applied Research">
+    <meta name="twitter:description" content="A woman-owned, mission-driven, warfighter-focused engineering and technical advisory firm specializing in advanced modeling and simulation, systems engineering, and software-intensive system architectures for complex defense systems.">
+    <meta name="twitter:image" content="images/soldier-interface.jpg">
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="about.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="main.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="exceutive_bio.html">Executive Bio</a></li>
+                <li><a href="contact_us.html">Contact Us</a></li>
+            </ul>
+        </nav>
+        <div class="logo">
+            <img src="images/logo.png" alt="MindForge Logo">
+        </div>
+    </header>
+
+    <main>
+        <section id="vision" class="about-section">
+            <h1>Vision</h1>
+            <p>Our vision is to shape a defense ecosystem where digital mastery accelerates readiness, resilience, and decision advantage—fusing applied research, advanced modeling, and intelligent systems into a unified foundation for the future fight.</p>
+            <p>MindForge envisions a world where data, simulation, and human insight converge seamlessly, forging pathways to stronger, smarter, and more agile national defense capabilities.</p>
+        </section>
+
+        <section id="mission" class="about-section">
+            <h1 class="section-title">Mission</h1>
+            <div class="mission-intro">
+                <p>Our mission is to deliver cutting-edge applied research, high-fidelity modeling and simulation, and intelligent decision-support solutions that empower the Department of Defense and allied partners to train, test, and operate with confidence in complex, multi-domain environments.</p>
+            </div>
+            <div class="mission-row">
+                <img src="images/soldier-simulation.jpg" alt="Soldier Simulation" class="mission-image">
+                <div class="mission-bullets">
+                    <p>We fulfill this mission by:</p>
+                    <ul>
+                        <li>Advancing digital ecosystems that integrate live, virtual, and constructive (LVC) elements into cohesive, scalable architectures.</li>
+                        <li>Transforming scientific research into actionable operational capability across space, missile defense, joint fires, and emerging threat domains.</li>
+                        <li>Embedding clarity, analytics, and rigor into every phase of design, experimentation, and assessment.</li>
+                        <li>Accelerating innovation through trusted partnerships, repeatable frameworks, and reusable digital assets.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="company" class="about-section">
+            <h1>About MindForge Applied Research, LLC</h1>
+            <p>MindForge Applied Research, LLC is a woman-owned, mission-driven, warfighter-focused engineering and technical advisory firm specializing in advanced modeling &amp; simulation (M&amp;S), systems engineering, and digital ecosystem development for the Department of Defense, its allies, and partners. Built on a foundation of deep technical and program management experience across the Army, Missile Defense Agency, Combatant Commands, and U.S. Space Force (just to name a few), MindForge provides the clarity, rigor, and strategic insight needed to solve the most complex defense engineering challenges.</p>
+            <p>We believe that engineering excellence requires more than algorithms, architectures, or frameworks—it requires unwavering dedication the the warfighter and extensive mission understanding. MindForge is built on a commitment to strengthening national defense through high-fidelity digital tools, robust systems architectures, and engineering rigor that drives measurable mission success. We thrive in the arena of Innovation without Boundaries.</p>
+            <p>Our work spans digital test &amp; training environments, distributed simulation frameworks, software-intensive M&amp;S capabilities, and enterprise-level architecture strategies. Whether supporting government program offices, SETAs, FFRDCs, or defense industry teams, MindForge delivers senior-level technical leadership and actionable engineering guidance that propels capability development and warfighter readiness to the next level.</p>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <img src="images/Heading-cropped.png" alt="Heading" class="footer-image">
+            <p>MindForge Applied Research, LLC works with DoD program offices, SETA organizations, FFRDCs, national labs, and defense industry and allied partners.</p>
+            <div class="footer-contacts">
+                <p>📧 info@mindforge-ar.com</p>
+                <p>📧 contracts@mindforge-ar.com</p>
+                <p>📍 Boise, ID</p>
+            </div>
+            <p>MindForge Applied Research, LLC © 2025 All Rights Reserved.</p>
+        </div>
+    </footer>
+    </body>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var header = document.querySelector('header');
+            function updateHeader() {
+                if (window.scrollY > 60) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+            }
+            updateHeader();
+            window.addEventListener('scroll', updateHeader);
+        });
+    </script>
+</html>
