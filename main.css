@@ -13,20 +13,22 @@
 header {
   position: fixed;
   top: 0;
+  left: 0;
+  right: 0;
   width: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
   padding: var(--padding);
-  background: transparent; /* show page behind header */
+  background-color: transparent;
   transition: background-color 240ms ease, box-shadow 240ms ease;
-  z-index: 10;
+  z-index: 9999;
 }
 
 /* Header styles when page is scrolled */
 header.scrolled {
-  background: var(--secondary-color);
-  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+  background-color: #EEF0F2 !important;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.12) !important;
 }
 
 /* Link colors: light over the hero, primary color when scrolled */
@@ -53,16 +55,88 @@ nav ul {
   display: flex;
   gap: var(--gap);
   margin: 0;
-  padding: 0 0 0 10px;
+  padding: 0 10px 0 0;
+}
+
+/* Dropdown menu styles */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-toggle {
+  cursor: pointer;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: var(--secondary-color);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  border-radius: 4px;
+  min-width: 180px;
+  padding: 10px 0;
+  margin-top: 0;
+  z-index: 1000;
+  flex-direction: column;
+  gap: 0;
+}
+
+.dropdown-menu li {
+  list-style: none;
+}
+
+.dropdown-menu a {
+  display: block;
+  padding: 10px 20px;
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.dropdown-menu a:hover {
+  background-color: rgba(27, 1, 226, 0.1);
+  color: var(--tertiary-color);
+}
+
+.dropdown:hover .dropdown-menu,
+.dropdown.active .dropdown-menu {
+  display: flex;
+}
+
+/* Ensure dropdown menu is visible when header is scrolled */
+header.scrolled .dropdown-menu {
+  background-color: var(--secondary-color);
+}
+
+header.scrolled .dropdown-menu a {
+  color: var(--primary-color);
+}
+
+/* Dropdown menu for transparent header */
+header:not(.scrolled) .dropdown-menu {
+  background-color: rgba(238, 240, 242, 0.98);
+}
+
+header:not(.scrolled) .dropdown-menu a {
+  color: var(--primary-color);
 }
 
 .logo {
+  margin-left: 10px;
   margin-right: 20px;
+}
+
+.logo a {
+  display: block;
+  line-height: 0;
 }
 
 .logo img {
   height: 50px;
   filter: brightness(0) invert(1);
+  transition: filter 0.3s ease;
 }
 
 header.scrolled .logo img {
@@ -247,7 +321,7 @@ footer {
 }
 
 #section1 {
-  background-image: url('images/rocket-launch.jpeg');
+  background-image: url('images/tech-tunnel.jpg');
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -260,6 +334,25 @@ footer {
   text-align: right;
   position: relative;
   padding: 100px 15% 0; /* top padding to clear fixed header when transparent */
+  
+}
+
+#section1::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 0;
+}
+
+#section1 h1,
+#section1 p,
+#section1 button {
+  position: relative;
+  z-index: 1;
 }
 
 #section1 h1 {
@@ -269,7 +362,11 @@ footer {
 
 #section1 p {
   font-size: 1.2rem;
-  max-width: 600px;
+  max-width: 800px;
+  margin-bottom: .25rem;
+}
+
+#section1 p:last-of-type {
   margin-bottom: 2rem;
 }
 
@@ -290,9 +387,9 @@ footer {
 }
 
 .principle-box {
-  background-color: var(--secondary-color);
+  background-color: rgba(238, 240, 242, 0.75);
   color: var(--primary-color);
-  padding: var(--padding);
+  padding: 20px;
   margin: 10px 0;
   border-radius: 5px;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
@@ -302,7 +399,24 @@ footer {
   min-height: 250px;
   display: flex;
   flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+}
+
+.principle-box h4 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  min-height: 2.5em;
+  display: flex;
+  align-items: center;
   justify-content: center;
+}
+
+.principle-box p {
+  flex: 1;
+  display: flex;
+  align-items: flex-start;
+  margin: 0;
 }
 
 #section3 {

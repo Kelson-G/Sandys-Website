@@ -1,0 +1,130 @@
+:root {
+  --primary-color: #00195f; /* Midnight Blue */
+  --secondary-color: #EEF0F2; /* Porcelain */
+  --accent-color: #ffe033; /* Bright Sun */
+  --text-color: #000000; /* Black */
+  --tertiary-color: #1b01e2; /* Dark Blue */
+  --font-family: Arial, sans-serif;
+  --font-size: 16px;
+  --padding: 10px;
+  --gap: 30px;
+}
+
+/* Capabilities Hero Section */
+#capabilities-hero {
+  position: relative;
+  background-image: url('images/digital-world.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  min-height: 50vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 100px 15% 60px;
+  color: #ffffff;
+  text-align: center;
+  overflow: hidden;
+}
+
+#capabilities-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.2);
+  z-index: 0;
+}
+
+#capabilities-hero > * {
+  position: relative;
+  z-index: 1;
+}
+
+#capabilities-hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+#capabilities-hero p {
+  font-size: 1.2rem;
+  max-width: 800px;
+  line-height: 1.6;
+}
+
+/* Capabilities Content Section */
+#capabilities-content {
+  max-width: 1200px;
+  margin: 60px auto;
+  padding: 0 15px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 40px;
+}
+
+.capability-card {
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.capability-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+.capability-card h2 {
+  color: var(--primary-color);
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  border-bottom: 3px solid var(--tertiary-color);
+  padding-bottom: 0.5rem;
+}
+
+.capability-card ul {
+  list-style: none;
+  padding: 0;
+}
+
+.capability-card li {
+  margin-bottom: 0.75rem;
+  padding-left: 1.5rem;
+  position: relative;
+  line-height: 1.6;
+}
+
+.capability-card li:before {
+  content: "•";
+  color: var(--tertiary-color);
+  font-size: 1.5rem;
+  position: absolute;
+  left: 0;
+  top: -2px;
+}
+
+@media (max-width: 768px) {
+  #capabilities-hero {
+    padding: 80px 15px 40px;
+    min-height: 40vh;
+  }
+
+  #capabilities-hero h1 {
+    font-size: 2rem;
+  }
+
+  #capabilities-hero p {
+    font-size: 1rem;
+  }
+
+  #capabilities-content {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    margin: 40px auto;
+  }
+
+  .capability-card {
+    padding: 20px;
+  }
+}

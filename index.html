@@ -7,7 +7,7 @@
     <meta name="description" content="A woman-owned, mission-driven, warfighter-focused
 engineering and technical advisory firm specializing in advanced modeling and simulation,
 systems engineering, and software-intensive system architectures for complex defense systems.">
-    <meta name="keywords" content="MindForge, Applied Research, AI, Machine Learning, Modeling, Simulation, Systems Engineering, Software Architecture, Defense Systems">
+    <meta name="keywords" content="MindForge AR, Applied Research, AI, Machine Learning, Modeling, Simulation, Systems Engineering, Software Architecture, Defense Systems">
     <meta name="robots" content="index, follow">
     <meta name="author" content="Kelson Gneiting">
 
@@ -36,31 +36,40 @@ systems engineering, and software-intensive system architectures for complex def
 </head>
 <body>
     <header>
+        <div class="logo">
+            <a href="index.html">
+                <img src="images/logo.png" alt="MindForge Logo">
+            </a>
+        </div>
         <nav>
             <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="exceutive_bio.html">Executive Bio</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle">Who We Are</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="mission.html">Vision and Mission</a></li>
+                        <li><a href="exceutive_bio.html">Leadership</a></li>
+                    </ul>
+                </li>
+                <li><a href="capabilities.html">Capabilities</a></li>
                 <li><a href="contact_us.html">Contact Us</a></li>
             </ul>
         </nav>
-        <div class="logo">
-            <img src="images/logo.png" alt="MindForge Logo">
-        </div>
     </header>
 
     <main>
         <section id="section1">
             <h1>MindForge Applied Research</h1>
-            <p>A woman-owned, mission-driven, warfighter-focused engineering and technical advisory firm specializing in advanced modeling & 
-                simulation, systems engineering, and software-intensive system architectures for complex defense systems.</p>
+            <p class="tagline">Mission Driven. Warfighter Focused. Unlimited Possibilities.</p>
+            <p class="description">Providing cutting-edge modeling & simulation, systems engineering, and software-intensive system architecture solutions for next generation defense systems.</p>
+            <p class="motto">INNOVATION WITHOUT BOUNDARIES</p>
             <button id="learn-more-btn">Learn More</button>
         </section>
 
         <section id="section2">
             <div class="intro-section">
-                <h2>What can MindForge do for you?</h2>
-                <p>We transform complexity into mission success—delivering exceptional technical insight, guidance and support across the 
+                <h2>What can MindForge AR do for you?</h2>
+                <p>We transform complex operational challenges into ground-breaking solutions for mission success—delivering exceptional technical insight, guidance and support across the 
                     entire engineering enterprise domain focused in high-fidelity modeling and simulation solutions that accelerate warfighter 
                     readiness and support critical defense missions.</p>
                 <div class="intro-content">
@@ -72,7 +81,7 @@ systems engineering, and software-intensive system architectures for complex def
             </div>
             
             <div class="principles-section">
-                <h3>We ground our philosophy in three guiding principles</h3>
+                <h3>GUIDING PRINCIPLES</h3>
                 
                 <div class="principles-container">
                     <div class="principle-box">
@@ -93,9 +102,9 @@ systems engineering, and software-intensive system architectures for complex def
             </div>
         </section>
 
-        <section id="section3">
+        <!-- <section id="section3">
             <div class="core-left">
-                <h2>Core Competencies</h2>
+                <h2>Core Capabilities</h2>
             </div>
             <div class="core-right">
                 <div class="competency-slider">
@@ -139,14 +148,13 @@ systems engineering, and software-intensive system architectures for complex def
                 <button class="prev">&lt;</button>
                 <button class="next">&gt;</button>
             </div>
-        </section>
+        </section> -->
 
     </main>
 
     <footer>
         <div class="footer-content">
             <img src="images/Heading-cropped.png" alt="Heading" class="footer-image">
-            <p>MindForge Applied Research, LLC works with DoD program offices, SETA organizations, FFRDCs, national labs, and defense industry and allied partners.</p>
             <div class="footer-contacts">
                 <p>📧 info@mindforge-ar.com</p>
                 <p>📧 contracts@mindforge-ar.com</p>
@@ -158,26 +166,6 @@ systems engineering, and software-intensive system architectures for complex def
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            const items = document.querySelectorAll('.competency-item');
-            const prevBtn = document.querySelector('.prev');
-            const nextBtn = document.querySelector('.next');
-            let currentIndex = 0;
-
-            function showItem(index) {
-                items.forEach(item => item.classList.remove('active'));
-                items[index].classList.add('active');
-            }
-
-            prevBtn.addEventListener('click', function() {
-                currentIndex = (currentIndex - 1 + items.length) % items.length;
-                showItem(currentIndex);
-            });
-
-            nextBtn.addEventListener('click', function() {
-                currentIndex = (currentIndex + 1) % items.length;
-                showItem(currentIndex);
-            });
-
             // Smooth scroll with offset for Learn More button
             var learnMoreBtn = document.getElementById('learn-more-btn');
             if (learnMoreBtn) {
@@ -205,6 +193,49 @@ systems engineering, and software-intensive system architectures for complex def
             }
             updateHeader();
             window.addEventListener('scroll', updateHeader);
+
+            // Dropdown menu functionality
+            const dropdowns = document.querySelectorAll('.dropdown');
+            dropdowns.forEach(dropdown => {
+                const toggle = dropdown.querySelector('.dropdown-toggle');
+                toggle.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    dropdown.classList.toggle('active');
+                });
+            });
+
+            // Close dropdown when clicking outside
+            document.addEventListener('click', function(e) {
+                if (!e.target.closest('.dropdown')) {
+                    dropdowns.forEach(dropdown => {
+                        dropdown.classList.remove('active');
+                    });
+                }
+            });
+
+            // Competency slider (only if elements exist)
+            // const items = document.querySelectorAll('.competency-item');
+            // const prevBtn = document.querySelector('.prev');
+            // const nextBtn = document.querySelector('.next');
+            
+            // if (items.length > 0 && prevBtn && nextBtn) {
+            //     let currentIndex = 0;
+
+            //     function showItem(index) {
+            //         items.forEach(item => item.classList.remove('active'));
+            //         items[index].classList.add('active');
+            //     }
+
+            //     prevBtn.addEventListener('click', function() {
+            //         currentIndex = (currentIndex - 1 + items.length) % items.length;
+            //         showItem(currentIndex);
+            //     });
+
+            //     nextBtn.addEventListener('click', function() {
+            //         currentIndex = (currentIndex + 1) % items.length;
+            //         showItem(currentIndex);
+            //     });
+            // }
         });
     </script>
 </body>

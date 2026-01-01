@@ -1,0 +1,146 @@
+:root {
+  --primary-color: #00195f; /* Midnight Blue */
+  --secondary-color: #EEF0F2; /* Porcelain */
+  --accent-color: #ffe033; /* Bright Sun */
+  --text-color: #000000; /* Black */
+  --tertiary-color: #1b01e2; /* Dark Blue */
+  --font-family: Arial, sans-serif;
+  --font-size: 16px;
+  --padding: 10px;
+  --gap: 30px;
+}
+
+/* Vision section hero background */
+#vision {
+  position: relative;
+  background-image: url('images/world.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  min-height: 70vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 100px 15% 60px;
+  color: #ffffff;
+  overflow: hidden;
+  margin-bottom: 48px;
+}
+
+#vision::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+  z-index: 0;
+}
+
+#vision > * {
+  position: relative;
+  z-index: 1;
+  max-width: 900px;
+}
+
+#vision h1 {
+  margin-bottom: 1rem;
+}
+
+#vision p {
+  line-height: 1.6;
+  margin: 0.5rem 0;
+}
+
+/* Mission layout */
+#mission {
+  margin-bottom: 60px;
+  padding: 40px 15px;
+}
+
+#mission .section-title {
+  text-align: center;
+  max-width: 1000px;
+  margin: 0 auto 1rem;
+  padding: 0 15px 0.5rem;
+  letter-spacing: 0.01em;
+  border-bottom: 3px solid var(--tertiary-color);
+}
+
+.mission-intro {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.mission-intro p {
+  text-align: center;
+  line-height: 1.7;
+  letter-spacing: 0.02em;
+  word-spacing: 0.03em;
+  margin: 0.5rem 0 1.25rem;
+}
+
+.mission-row {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  padding: 0 15px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.mission-image {
+  flex: 1;
+  max-width: 520px;
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+  object-fit: cover;
+}
+
+.mission-bullets {
+  flex: 2;
+  min-width: 0;
+}
+
+.mission-bullets p {
+  margin-top: 0;
+}
+
+.mission-bullets li {
+  line-height: 1.7;
+  word-spacing: 0.03em;
+  overflow-wrap: break-word;
+  hyphens: auto;
+}
+
+@media (max-width: 1024px) {
+  .mission-row {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .mission-image {
+    align-self: center;
+  }
+}
+
+@media (max-width: 768px) {
+  #vision {
+    padding: 80px 15px 40px;
+  }
+
+  .mission-row {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #mission .section-title {
+    margin: 0 10% 1rem;
+  }
+
+  .mission-image {
+    max-width: 100%;
+    align-self: center;
+  }
+}

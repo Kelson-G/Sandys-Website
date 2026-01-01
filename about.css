@@ -148,30 +148,34 @@
   margin-bottom: 60px; /* add whitespace before footer */
 }
 
-#company h1 {
+.company-header {
   position: relative;
   background-image: url('images/matrix.jpg');
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
-  color: var(--accent-color); /* bright sun color */
-  text-align: center;
-  max-width: 100%;
-  margin: 0 0 40px 0; /* add spacing below header */
-  padding: 80px 15% 40px;
-  text-shadow: 0 2px 8px rgb(0, 0, 0, 1); /* add shadow for contrast */  -webkit-text-stroke: 1px rgba(0, 0, 0, 0.1); /* outline for text */}
+  padding: 280px 15% 170px; /* increased padding for larger background area */
+  margin-bottom: 40px;
+  overflow: hidden;
+}
 
-#company h1::before {
+.company-header::before {
   content: '';
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0);
+  background: rgba(0, 0, 0, 0.5); /* dark overlay for readability */
   z-index: 0;
 }
 
 #company h1 {
   position: relative;
   z-index: 1; /* place text above overlay */
+  color: var(--accent-color); /* bright sun color */
+  text-align: center;
+  max-width: 100%;
+  margin: 0;
+  text-shadow: 0 2px 8px rgb(0, 0, 0, 1); /* add shadow for contrast */
+  -webkit-text-stroke: 1px rgba(0, 0, 0, 0.1); /* outline for text */
 }
 
 #company p {

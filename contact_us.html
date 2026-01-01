@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MindForge Applied Research | Contact Us</title>
     <meta name="description" content="A woman-owned, mission-driven, warfighter-focused engineering and technical advisory firm specializing in advanced modeling and simulation, systems engineering, and software-intensive system architectures for complex defense systems.">
-    <meta name="keywords" content="MindForge, Applied Research, AI, Machine Learning, Modeling, Simulation, Systems Engineering, Software Architecture, Defense Systems">
+    <meta name="keywords" content="MindForge AR, Applied Research, AI, Machine Learning, Modeling, Simulation, Systems Engineering, Software Architecture, Defense Systems">
     <meta name="robots" content="index, follow">
     <meta name="author" content="Kelson Gneiting">
 
@@ -31,17 +31,25 @@
 </head>
 <body>
     <header>
+        <div class="logo">
+            <a href="index.html">
+                <img src="images/logo.png" alt="MindForge Logo">
+            </a>
+        </div>
         <nav>
             <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="exceutive_bio.html">Executive Bio</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle">Who We Are</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="mission.html">Vision and Mission</a></li>
+                        <li><a href="exceutive_bio.html">Leadership</a></li>
+                    </ul>
+                </li>
+                <li><a href="capabilities.html">Capabilities</a></li>
                 <li><a href="contact_us.html">Contact Us</a></li>
             </ul>
         </nav>
-        <div class="logo">
-            <img src="images/logo.png" alt="MindForge Logo">
-        </div>
     </header>
 
     <main>
@@ -89,7 +97,6 @@
     <footer>
         <div class="footer-content">
             <img src="images/Heading-cropped.png" alt="Heading" class="footer-image">
-            <p>MindForge Applied Research, LLC works with DoD program offices, SETA organizations, FFRDCs, national labs, and defense industry and allied partners.</p>
             <div class="footer-contacts">
                 <p>📧 info@mindforge-ar.com</p>
                 <p>📧 contracts@mindforge-ar.com</p>
@@ -111,6 +118,25 @@
             }
             updateHeader();
             window.addEventListener('scroll', updateHeader);
+
+            // Dropdown menu functionality
+            const dropdowns = document.querySelectorAll('.dropdown');
+            dropdowns.forEach(dropdown => {
+                const toggle = dropdown.querySelector('.dropdown-toggle');
+                toggle.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    dropdown.classList.toggle('active');
+                });
+            });
+
+            // Close dropdown when clicking outside
+            document.addEventListener('click', function(e) {
+                if (!e.target.closest('.dropdown')) {
+                    dropdowns.forEach(dropdown => {
+                        dropdown.classList.remove('active');
+                    });
+                }
+            });
 
             // Form submission handler
             const contactForm = document.getElementById('contact-form');
